@@ -18,9 +18,10 @@ Monogo DB connection
 
 
 -------------------
-------CLIENT-------
+CLIENT
 -------------------
-------CREATE-------
+CREATE
+-------------------
 
 1. Create fetch
 2. provide method: "POST"
@@ -31,6 +32,15 @@ Monogo DB connection
 
 
 ------------------
--------READ-------
+READ MANY
 ------------------
+1. create a cursor = userCollection.find()
+2. const result = await cursor.toArray()
 
+------------------
+DELETE
+------------------
+1. create app.delete('/users/:id', async(req, res) => {})
+2. specify unique ObjectId to delete the right user
+3. const query  = { _id: new ObjectId(id)}
+4. const result = await userCollection.deleteOne(query)
